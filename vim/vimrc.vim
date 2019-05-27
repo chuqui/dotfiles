@@ -1,11 +1,11 @@
 " General Vim settings
 	syntax on
-	let mapleader=","
+  "	let mapleader=","
 	set autoindent
-	set tabstop=4
-	set shiftwidth=4
+	set tabstop=2
+	set shiftwidth=2
 	set dir=/tmp/
-	set relativenumber 
+	set relativenumber
 	set number
 
 	autocmd Filetype html setlocal sw=2 expandtab
@@ -36,7 +36,7 @@
 
 	nnoremap vv 0v$
 
-	set listchars=tab:\|\ 
+	set listchars=tab:\|\
 	nnoremap <leader><tab> :set list!<cr>
 	set pastetoggle=<F2>
 	set mouse=a
@@ -44,38 +44,13 @@
 
 " Language Specific
 	" Tabs
-		so ~/dotfiles/vim/tabs.vim
-
-	" General
-		inoremap <leader>for <esc>Ifor (int i = 0; i < <esc>A; i++) {<enter>}<esc>O<tab>
-		inoremap <leader>if <esc>Iif (<esc>A) {<enter>}<esc>O<tab>
-		
-
-	" Java
-		inoremap <leader>sys <esc>ISystem.out.println(<esc>A);
-		vnoremap <leader>sys yOSystem.out.println(<esc>pA);
-
-	" Java
-		inoremap <leader>con <esc>Iconsole.log(<esc>A);
-		vnoremap <leader>con yOconsole.log(<esc>pA);
-
-	" C++
-		inoremap <leader>cout <esc>Istd::cout << <esc>A << std::endl;
-		vnoremap <leader>cout yOstd::cout << <esc>pA << std:endl;
-
-	" C
-		inoremap <leader>out <esc>Iprintf(<esc>A);<esc>2hi
-		vnoremap <leader>out yOprintf(, <esc>pA);<esc>h%a
+		"so ~/dotfiles/vim/tabs.vim
 
 	" Typescript
 		autocmd BufNewFile,BufRead *.ts set syntax=javascript
 		autocmd BufNewFile,BufRead *.tsx set syntax=javascript
 
-	" Markup
-		inoremap <leader>< <esc>I<<esc>A><esc>yypa/<esc>O<tab>
-
-
-" File and Window Management 
+" File and Window Management
 	inoremap <leader>w <Esc>:w<CR>
 	nnoremap <leader>w :w<CR>
 
@@ -104,7 +79,7 @@
 	" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
 	" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
 	autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
-	set autoread 
+	set autoread
 	" Notification after file change
 	" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
 	autocmd FileChangedShellPost *
