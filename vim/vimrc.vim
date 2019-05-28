@@ -1,3 +1,6 @@
+" Plugin management
+  so ~/dotfiles/vim/plugins.vim
+
 " General Vim settings
 	syntax on
  	let mapleader=","
@@ -41,14 +44,6 @@
 	set pastetoggle=<F2>
 	set mouse=a
 	set incsearch
-
-" Language Specific
-	" Tabs
-		"so ~/dotfiles/vim/tabs.vim
-
-	" Typescript
-		autocmd BufNewFile,BufRead *.ts set syntax=javascript
-		autocmd BufNewFile,BufRead *.tsx set syntax=javascript
 
 " File and Window Management
 	inoremap <leader>w <Esc>:w<CR>
