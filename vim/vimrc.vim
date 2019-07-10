@@ -89,4 +89,10 @@
 
 " Fix for: https://github.com/fatih/vim-go/issues/1509
 
+" Theme
+set t_Co=256
+colorscheme minimalist
+
+
+
 filetype plugin indent on

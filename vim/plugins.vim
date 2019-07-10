@@ -12,6 +12,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'dikiaap/minimalist'
 
 call vundle#end()
 
