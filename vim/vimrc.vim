@@ -94,20 +94,6 @@
 set t_Co=256
 colorscheme minimalist
 
-" ALE plugin config
-let g:ale_linters = {
-			\   'python': ['flake8', 'pylint'],
-			\   'javascript': ['eslint'],
-			\   'vue': ['eslint']
-			\}
-
-let g:ale_fixers = {
-			\    'javascript': ['prettier', 'eslint'],
-			\    'vue': ['eslint'],
-			\    'scss': ['prettier']
-			\}
-let g:ale_fix_on_save = 1
-
 " Use ALE as completion sources for all code.
 call deoplete#custom#option('sources', {
 	\ '_': ['ale'],
