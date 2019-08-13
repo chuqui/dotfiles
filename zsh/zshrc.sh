@@ -2,7 +2,7 @@ FILE=~/dotfiles/zsh/private_config.sh
 
 if test -f "$FILE"; then
     echo "Private configuration file detected"
-    source "$FILE"
+    source $FILE
 fi
 
 # ===============================================
