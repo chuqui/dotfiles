@@ -13,18 +13,11 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'dikiaap/minimalist'
-" Plugin 'pangloss/vim-javascript'
-" Plugin 'w0rp/ale'
-" Plugin 'mxw/vim-jsx'
-" Plugin 'mhartington/nvim-typescript'
-" Plugin 'leafgarland/typescript-vim'
-" Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'Shougo/deoplete.nvim'
-" Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'ap/vim-css-color'
-Plugin 'mileszs/ack.vim'
-" Plugin 'stephpy/vim-yaml'
 
 call vundle#end()
 

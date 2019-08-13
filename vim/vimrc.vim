@@ -1,5 +1,5 @@
 " Plugin management
-  so ~/dotfiles/vim/plugins.vim
+    so ~/dotfiles/vim/plugins.vim
 
 " General Vim settings
 	syntax on
@@ -62,7 +62,7 @@
 	nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
 
 	nnoremap <leader>n :tabnext<CR>
-  nnoremap <leader>p :tabprevious<CR>
+    nnoremap <leader>p :tabprevious<CR>
 
 " Return to the same line you left off at
 	augroup line_return
@@ -84,63 +84,40 @@
 	autocmd FileChangedShellPost *
 	  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
-" Future stuff
-	"Swap line
-	"Insert blank below and above
-
-" Fix for: https://github.com/fatih/vim-go/issues/1509
-
 " Theme
-set t_Co=256
-colorscheme minimalist
-
-" Use ALE as completion sources for all code.
-call deoplete#custom#option('sources', {
-	\ '_': ['ale'],
-	\})
-
-let g:ale_completion_enabled = 1
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
+    set t_Co=256
+    colorscheme minimalist
 
 " JavaScript
-let g:javascript_plugin_flow = 1
+    let g:javascript_plugin_flow = 1
 
-augroup javascript_folding
-	au!
-	au FileType javascript setlocal foldmethod=syntax
-augroup END
+    augroup javascript_folding
+        au!
+        au FileType javascript setlocal foldmethod=syntax
+    augroup END
 
 " React config
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-" hi ReactState guifg=#C176A7
-" hi ReactProps guifg=#D19A66
-"hi Events ctermfg=204 guifg=#56B6C2
-"hi ReduxKeywords ctermfg=204 guifg=#C678DD
-"hi WebBrowser ctermfg=204 guifg=#56B6C2
-"hi ReactLifeCycleMethods ctermfg=204 guifg=#D19A66
-"hi tsxTypeBraces guifg=#999999
-"hi tsxTypes guifg=#666666
-"hi tsxTagName guifg=#E06C75
-"hi tsxCloseString guifg=#F99575
-"hi tsxCloseTag guifg=#F99575
-"hi tsxAttributeBraces guifg=#F99575
-"hi tsxEqual guifg=#F99575
-"hi tsxAttrib guifg=#F8BD7F cterm=italic
+    autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 " Lightline
-let g:lightline = {
-	\ 'colorscheme': 'wombat',
-	\ 'active': {
-	\   'right': [ [ 'lineinfo' ],
-	\              [ 'percent' ],
-	\              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
-	\ }
-	\ }
-set laststatus=2
+    let g:lightline = {
+        \ 'colorscheme': 'wombat',
+        \ 'active': {
+        \   'right': [ [ 'lineinfo' ],
+        \              [ 'percent' ],
+        \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
+        \ }
+        \ }
+    set laststatus=2
 
 " CtrlP set the root folder where vim was opened
-let g:ctrlp_working_path_mode = 0
+    let g:ctrlp_working_path_mode = 0
 
+" Snippets configuration
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+    let g:UltiSnipsEditSplit="vertical"
 
+" re-enable disabled options during config
 filetype plugin indent on
