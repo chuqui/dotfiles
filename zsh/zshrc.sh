@@ -1,7 +1,8 @@
-FILE=~/dotFiles/zsh/private_config.sh
+FILE=~/dotfiles/zsh/private_config.sh
 
 if test -f "$FILE"; then
-    source ~/dotFiles/zsh/private_config.sh
+    echo "Private configuration file detected"
+    source "$FILE"
 fi
 
 # ===============================================
