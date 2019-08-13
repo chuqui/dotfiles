@@ -3,6 +3,8 @@ FILE=~/dotfiles/zsh/private_config.sh
 if test -f "$FILE"; then
     echo "Private configuration file detected"
     source $FILE
+else
+    echo "Private configuration file not found at $FILE"
 fi
 
 # ===============================================
