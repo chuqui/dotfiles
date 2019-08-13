@@ -5,8 +5,9 @@
 	syntax on
  	let mapleader=","
 	set autoindent
-	set tabstop=2
-	set shiftwidth=2
+	set tabstop=4
+	set shiftwidth=4
+	set expandtab
 	set dir=/tmp/
 	set relativenumber
 	set number
@@ -93,6 +94,67 @@
 set t_Co=256
 colorscheme minimalist
 
+" ALE plugin config
+let g:ale_linters = {
+			\   'python': ['flake8', 'pylint'],
+			\   'javascript': ['eslint'],
+			\   'vue': ['eslint']
+			\}
+
+let g:ale_fixers = {
+			\    'javascript': ['prettier', 'eslint'],
+			\    'vue': ['eslint'],
+			\    'scss': ['prettier']
+			\}
+let g:ale_fix_on_save = 1
+
+" Use ALE as completion sources for all code.
+call deoplete#custom#option('sources', {
+	\ '_': ['ale'],
+	\})
+
+let g:ale_completion_enabled = 1
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+
+" JavaScript
+let g:javascript_plugin_flow = 1
+
+augroup javascript_folding
+	au!
+	au FileType javascript setlocal foldmethod=syntax
+augroup END
+
+" React config
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+" hi ReactState guifg=#C176A7
+" hi ReactProps guifg=#D19A66
+"hi Events ctermfg=204 guifg=#56B6C2
+"hi ReduxKeywords ctermfg=204 guifg=#C678DD
+"hi WebBrowser ctermfg=204 guifg=#56B6C2
+"hi ReactLifeCycleMethods ctermfg=204 guifg=#D19A66
+"hi tsxTypeBraces guifg=#999999
+"hi tsxTypes guifg=#666666
+"hi tsxTagName guifg=#E06C75
+"hi tsxCloseString guifg=#F99575
+"hi tsxCloseTag guifg=#F99575
+"hi tsxAttributeBraces guifg=#F99575
+"hi tsxEqual guifg=#F99575
+"hi tsxAttrib guifg=#F8BD7F cterm=italic
+
+" Lightline
+let g:lightline = {
+	\ 'colorscheme': 'wombat',
+	\ 'active': {
+	\   'right': [ [ 'lineinfo' ],
+	\              [ 'percent' ],
+	\              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
+	\ }
+	\ }
+set laststatus=2
+
+" CtrlP set the root folder where vim was opened
+let g:ctrlp_working_path_mode = 0
 
 
 filetype plugin indent on
