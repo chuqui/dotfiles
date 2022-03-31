@@ -10,7 +10,6 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set nobackup
-set scrolloff=10
 set nowrap
 set incsearch
 set smartcase
@@ -74,8 +73,12 @@ call plug#end()
 
 """" plugin config
 let g:coc_global_extensions = [
+  \ 'coc-marketplace'
   \ 'coc-tsserver'
-  \ ]
+  \ 'coc-cssmodules'
+  \ 'coc-lists'
+  \ 'coc-snippets'
+  \ 'coc-explorer']
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
@@ -83,6 +86,10 @@ endif
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/tslint')
+  let g:coc_global_extensions += ['coc-tslint']
 endif
 
 autocmd! User GoyoEnter Limelight
@@ -141,11 +148,6 @@ colorscheme nord
 hi! CocErrorHighlight ctermfg=white guifg=#ffffff
 
 """" Commands to execute for Conquer of completion
-" :CocInstall coc-tsserver
-" :CocInstall coc-eslint
-" :CocInstall coc-prettier
-" :CocInstall coc-lists
-" :CocInstall coc-explorer
 " :CocConfig 
 "{
 "    "coc.preferences.formatOnSaveFiletypes": [
