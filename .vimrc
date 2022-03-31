@@ -93,6 +93,8 @@ let g:nord_borders = v:false
 let g:nord_disable_background = v:true
 let g:nord_italic = v:true
 
+hi! CocErrorHighlight ctermfg=white guifg=#ffffff
+
 """" mappings
 let mapleader=" "
 nnoremap n nzz
