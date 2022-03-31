@@ -3,10 +3,7 @@
 """" sets 
 set nocompatible
 set nobackup
-filetype on
-filetype plugin on
-filetype indent on
-syntax on
+set nowritebackup
 set number relativenumber
 set backspace=indent,eol,start
 set shiftwidth=4
@@ -30,6 +27,11 @@ set wildignore+=**/.git/*
 set wildignore+=**/coverage/*
 set wildignore+=**/node_modules/*
 
+filetype on
+filetype plugin on
+filetype indent on
+syntax on
+
 """" plugins
 call plug#begin()
     " The basics
@@ -40,8 +42,9 @@ call plug#begin()
     Plug 'junegunn/fzf.vim'
     Plug 'christoomey/vim-tmux-navigator'
 
-    " Comments
+    " Code utils
     Plug 'tpope/vim-commentary'
+    Plug 'editorconfig/editorconfig-vim'
 
     " Writing
     Plug 'junegunn/goyo.vim'
@@ -136,6 +139,7 @@ let g:airline_theme='nord'
 colorscheme nord
 
 """" Commands to execute for Conquer of completion
+" :CocInstall coc-tsserver
 " :CocInstall coc-eslint
 " :CocInstall coc-prettier
 " :CocInstall coc-lists
