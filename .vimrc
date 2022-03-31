@@ -32,8 +32,10 @@ set wildignore+=**/node_modules/*
 
 """" plugins
 call plug#begin()
+    " The basics
     Plug 'tpope/vim-surround'
     Plug 'kshenoy/vim-signature'
+    Plug 'tpope/vim-eunuch'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'christoomey/vim-tmux-navigator'
@@ -56,11 +58,15 @@ call plug#begin()
     Plug 'leafgarland/typescript-vim'
     Plug 'peitalin/vim-jsx-typescript'
     Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+    Plug 'mattn/emmet-vim'
 
     " Appareance
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'arcticicestudio/nord-vim'
+    
+    " Extra
+    Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 call plug#end()
 
 """" plugin config
