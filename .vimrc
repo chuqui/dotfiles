@@ -93,8 +93,6 @@ let g:nord_borders = v:false
 let g:nord_disable_background = v:true
 let g:nord_italic = v:true
 
-hi! CocErrorHighlight ctermfg=white guifg=#ffffff
-
 """" mappings
 let mapleader=" "
 nnoremap n nzz
@@ -139,6 +137,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<c-p>" : "\<S-Tab>"
 """" colorscheme activation
 let g:airline_theme='nord'
 colorscheme nord
+" Fix color-scheme
+hi! CocErrorHighlight ctermfg=white guifg=#ffffff
 
 """" Commands to execute for Conquer of completion
 " :CocInstall coc-tsserver
