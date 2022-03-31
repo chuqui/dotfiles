@@ -8,6 +8,7 @@ filetype plugin on
 filetype indent on
 syntax on
 set number relativenumber
+set backspace=indent,eol,start
 set shiftwidth=4
 set tabstop=4
 set expandtab
