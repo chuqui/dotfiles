@@ -66,18 +66,15 @@ call plug#begin()
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'arcticicestudio/nord-vim'
-    
-    " Extra
-    Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 call plug#end()
 
 """" plugin config
 let g:coc_global_extensions = [
-  \ 'coc-marketplace'
-  \ 'coc-tsserver'
-  \ 'coc-cssmodules'
-  \ 'coc-lists'
-  \ 'coc-snippets'
+  \ 'coc-marketplace',
+  \ 'coc-tsserver',
+  \ 'coc-cssmodules',
+  \ 'coc-lists',
+  \ 'coc-snippets',
   \ 'coc-explorer']
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
