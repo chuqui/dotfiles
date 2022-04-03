@@ -1,9 +1,10 @@
-" Vim / nvim config
+" Basic front-end development config compatible with vim and nvim
 
 """" sets 
 set nocompatible
 set nobackup
 set nowritebackup
+set noswapfile
 set number relativenumber
 set backspace=indent,eol,start
 set shiftwidth=4
@@ -60,7 +61,6 @@ call plug#begin()
     Plug 'leafgarland/typescript-vim'
     Plug 'peitalin/vim-jsx-typescript'
     Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-    Plug 'mattn/emmet-vim'
 
     " Appareance
     Plug 'vim-airline/vim-airline'
@@ -102,10 +102,6 @@ let mapleader=" "
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap Y y$
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
 nnoremap <c-p> :GFiles<CR>
 nnoremap <c-a> :Ag<CR>
 
@@ -117,26 +113,20 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <leader>do <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)	
 
-inoremap <leader>w <Esc>:w<CR>
 nnoremap <leader>w :w<CR>
-
-inoremap <leader>q <ESC>:q<CR>
 nnoremap <leader>q :q<CR>
-
-inoremap <leader>x <ESC>:x<CR>
 nnoremap <leader>x :x<CR>
-
 nnoremap <leader>e :CocCommand explorer<CR>
-nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>v :vsplit<CR>
 nnoremap <leader>s :split<CR>
 
-nnoremap <leader>n :tabnext<CR>
-nnoremap <leader>p :tabprevious<CR>
-
-inoremap <expr> <Tab> pumvisible() ? "\<c-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<c-p>" : "\<S-Tab>"
-
+" Enter expands the selected suggestion
+inoremap <silent><expr> <CR> pumvisible() ? "\<C-y>" :  "\<CR>"
+" Tab expands the first suggestion
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>\<C-y>" : "\<TAB>"
+" Navigate with Ctri K and Ctrl J
+let g:coc_snippet_next = '<C-j>'
+let g:coc_snippet_prev = '<C-k>'
 
 """" colorscheme activation
 let g:airline_theme='nord'
