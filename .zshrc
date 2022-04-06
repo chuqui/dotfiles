@@ -3,10 +3,15 @@ export EDITOR='vim'
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git)
+
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# git clone https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-zsh-plugin
+
+plugins=(git vi-mode tmux fzf fzf-zsh-plugin zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zshrc_private
+
+[ -s "~/.zshrc_private" ] && source ~/.zshrc_private
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
