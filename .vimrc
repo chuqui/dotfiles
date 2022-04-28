@@ -49,6 +49,7 @@ call plug#begin()
     " Writing
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  }
 
     " Git
     Plug 'tpope/vim-fugitive'
