@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if tmux has-session -t 'dev' 2>/dev/null; then
+  tmux attach-session -t 'dev'
+else
+  tmux new-session -s 'dev' -d 'vim'
+  tmux split-window -v
+  tmux split-window -h
+  tmux split-window -h
+  tmux -2 attach-session -t 'dev'
+fi
