@@ -44,6 +44,28 @@ Tools (in no particular order):
  - tldr: short man pages
  - exa: replacement for ls
  - bat: replacement for cat
+ - coreutils: GNU bins
 
 Theme:
  - nord 
+
+### Coreutils
+
+By default GNU coreutils are not included in `PATH` by default.
+
+```shell
+PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+```
+
+### Move windows on Mac
+
+To move windows on Mac with `Ctrl` + `Cmd` + `Drag`: 
+
+```shell
+defaults write -g NSWindowShouldDragOnGesture -bool true   
+sudo reboot
+```
+
+To disable this, run 
+```defaults delete -g NSWindowShouldDragOnGesture```
+

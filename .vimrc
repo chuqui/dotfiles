@@ -18,8 +18,9 @@ set showcmd
 set showmode
 set showmatch
 set cursorline
-set hlsearch
+set hidden
 set history=1000
+set hlsearch
 set mouse=a
 set wildmenu
 set wildmode=list:longest
@@ -75,7 +76,7 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-cssmodules',
   \ 'coc-lists',
-  \ 'coc-snippets',
+  \ 'coc-java',
   \ 'coc-explorer']
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
@@ -93,8 +94,8 @@ endif
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 let g:limelight_conceal_ctermfg = 66
-let g:nord_contrast = v:false
-let g:nord_borders = v:false
+let g:nord_contrast = v:true
+let g:nord_borders = v:true
 let g:nord_disable_background = v:true
 let g:nord_italic = v:true
 
@@ -118,6 +119,7 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>x :x<CR>
 nnoremap <leader>e :CocCommand explorer<CR>
+nnoremap <leader>b :Buffers
 nnoremap <leader>v :vsplit<CR>
 nnoremap <leader>s :split<CR>
 
@@ -125,9 +127,6 @@ nnoremap <leader>s :split<CR>
 inoremap <silent><expr> <CR> pumvisible() ? "\<C-y>" :  "\<CR>"
 " Tab expands the first suggestion
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>\<C-y>" : "\<TAB>"
-" Navigate with Ctri K and Ctrl J
-let g:coc_snippet_next = '<C-j>'
-let g:coc_snippet_prev = '<C-k>'
 
 """" colorscheme activation
 let g:airline_theme='nord'
@@ -135,16 +134,19 @@ colorscheme nord
 " Fix color-scheme
 hi! CocErrorHighlight ctermfg=white guifg=#ffffff
 
+
+
+
 """" Commands to execute for Conquer of completion
 " :CocConfig 
 "{
-"    "coc.preferences.formatOnSaveFiletypes": [
+"  "coc.preferences.formatOnSaveFiletypes": [
 "    "javascript",
-"    "javascriptreact","
+"    "javascriptreact",
 "    "typescript",
 "    "typescriptreact"
 "  ],
 "  "tsserver.formatOnType": true,
 "  "coc.preferences.formatOnType": true,
-"  "explorer.file.showHiddenFiles":true
+"  "explorer.file.showHiddenFiles": true
 "}

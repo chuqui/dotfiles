@@ -1,30 +1,28 @@
-env:
-  TERM: xterm-256color
+live_config_reload: true
 
 scrolling:
   history: 10000
   multiplier: 3
 
-draw_bold_text_with_bright_colors: true
-
 save_to_clipboard: true
-
-window.dynamic_title: true
 
 cursor:
   style: Underline
 
-live_config_reload: true
-
-shell:
-  program: /usr/bin/zsh
-  args:
-    - --login
-
 mouse:
   hide_when_typing: true
 
+font:
+  normal:
+    family: "FuraMono Nerd Font"
+  size: 14.0
 
+window:
+  opacity: 0.8
+  decorations: buttonless
+  padding:
+    x: 5
+    y: 10
 
 # Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
 # Copyright (c) 2017-present Sven Greb <code@svengreb.de>
