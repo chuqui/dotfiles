@@ -39,6 +39,7 @@ Tools (in no particular order):
  - tmux: terminal multiplexer
  - vim: editor of choice
  - ranger: file manager
+ - mc: file manager
  - tig: git curses client
  - lua: scripting language for automation
  - tldr: short man pages
@@ -56,6 +57,10 @@ By default GNU coreutils are not included in `PATH` by default.
 ```shell
 PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 ```
+
+### Nord theme on Midnight Commander
+
+Copy the `nord.ini` file into `.local/shared/mc/skins`. Start `mc` and select the nord skin from `Options`>`Appareance`.
 
 ### Move windows on Mac
 
